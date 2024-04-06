@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>z-zoomer</title>
+    <link rel="stylesheet" href="./src/index.css" />
+    <script type="module" src="./src/index.ts"></script>
+    <script type="module" src="https://unpkg.com/@benavern/z-carousel"></script>
+    <link href="https://unpkg.com/prismjs@1/themes/prism-twilight.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/prismjs@1/components/prism-core.min.js" defer></script>
+    <script src="https://unpkg.com/prismjs@1/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <span class="logo">z-zoomer</span>
+                demo
+            </h1>
+
+            <div class="ext-links">
+                <a href="https://github.com/benavern/z-zoomer" title="github" target="_blank" class="ext-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 96 96">
+                        <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"
+                            d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" />
+                    </svg>
+                </a>
+
+                <a href="https://www.npmjs.com/package/@benavern/z-zoomer" title="npm" target="_blank"
+                    class="ext-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 32 32"
+                        fill="currentColor">
+                        <path
+                            d="M7.415 7.656l17.291 0.024-0.011 17.29h-4.329l0.012-12.974h-4.319l-0.010 12.964h-8.656zM3.207 1.004c-0.002 0-0.003 0-0.005 0-1.214 0-2.198 0.984-2.198 2.198 0 0.002 0 0.004 0 0.006v-0 25.585c0 0.002 0 0.003 0 0.005 0 1.214 0.984 2.198 2.198 2.198 0.002 0 0.004 0 0.006 0h25.585c0.002 0 0.003 0 0.005 0 1.214 0 2.198-0.984 2.198-2.198 0-0.002 0-0.004 0-0.006v0-25.585c0-0.002 0-0.003 0-0.005 0-1.214-0.984-2.198-2.198-2.198-0.002 0-0.004 0-0.006 0h0z" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 id="get-started">Get started</h2>
+
+            <p>
+                <code>z-zoomer</code> is available on npm, published as <code>@benavern/z-zoomer</code>.
+            </p>
+
+            <br>
+
+            <h3>npm</h3>
+
+            <p>The component is available <a href="https://www.npmjs.com/package/@benavern/z-zoomer">here on npm</a>,
+                you can install it via this command:</p>
+
+            <pre><code class="language-bash">npm i @benavern/z-zoomer</code></pre>
+
+            <p>Then you can use it in your scripts like so in your js/ts module files: </p>
+
+            <pre><code class="language-ts">import '@benavern/z-zoomer';</code></pre>
+
+            <hr>
+
+            <h3>CDN</h3>
+
+            <pre><code class="language-html">&lt;script type="module" src="https://unpkg.com/@benavern/z-zoomer"&gt;&lt;/script&gt;</code></pre>
+
+            <hr>
+
+            <h3>Have fun</h3>
+
+            <p>For example you can use it to display a slider of images</p>
+
+            <pre><code class="language-html">&lt;z-zoomer&gt;
+  &lt;img src="https://picsum.photos/960/540?random=1"&gt;
+&lt;/z-zoomer&gt;</code></pre>
+
+            <z-zoomer>
+                <img src="https://picsum.photos/960/540?random=1" loading="lazy">
+            </z-zoomer>
+
+            <p>Any HTML will work</p>
+
+            <pre><code class="language-html">&lt;z-zoomer&gt;
+  &lt;p&gt;
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore vel recusandae quae accusamus, dolore facilis maxime laboriosam quod provident magni in voluptates unde ex. Eveniet ex a expedita numquam soluta?
+  &lt;/p&gt;
+&lt;/z-zoomer&gt;</code></pre>
+
+            <z-zoomer>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore vel recusandae quae accusamus,
+                    dolore facilis maxime laboriosam quod provident magni in voluptates unde ex. Eveniet ex a expedita
+                    numquam soluta?
+                </p>
+            </z-zoomer>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 id="max">Max</h2>
+
+            <p>You can set <code>max</code> zoom attribute to control the max zoom value. (default: 10, min: 1)</p>
+
+            <p>You can reset the component by calling the reset public methode.</p>
+
+            <figure>
+                <z-zoomer id="max-demo" max="3">
+                    <img src="https://picsum.photos/960/540?random=max-1" loading="lazy">
+                </z-zoomer>
+
+                <figcaption>
+                    <p><button id="max-demo-reset-btn">Reset</button></p>
+
+                    <p>HTML</p>
+
+                    <pre><code class="language-html">&lt;z-zoomer id="max-demo" max="3"&gt;
+    &lt;img src="https://picsum.photos/960/540?random=max-1"&gt;
+&lt;/z-zoomer&gt;</code></pre>
+
+                    <p>TS</p>
+
+                    <pre><code class="language-ts">document.querySelector('#max-demo-reset-btn')?.addEventListener('click', () => {
+    (document.querySelector('#max-demo') as ZZoomer)?.reset();
+})</code></pre>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 id="events">Events</h2>
+
+            <p>You can react to <code>zoomchange</code> events on the component. It will provide the information whether it is zoomed or not.</p>
+
+            <figure>
+                <z-zoomer id="events-demo">
+                    <img src="https://picsum.photos/960/540?random=events-1" loading="lazy">
+                </z-zoomer>
+
+                <figcaption>
+                    <p>Zoomed : <code id="events-demo-result"></code></p>
+
+                    <pre><code class="language-ts">document.querySelector('#events-demo')?.addEventListener('zoomchange', (e) => {
+    const { isZoomed } = (e as CustomEvent).detail;
+    document.querySelector('#events-demo-result')!.textContent = isZoomed;
+})</code></pre>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 id="disabled">Disabled</h2>
+
+            <p>You can disable any interaction on the zoomer with the <code>disabled</code> attribute.</p>
+
+            <figure>
+                <z-zoomer id="disabled-demo">
+                    <img src="https://picsum.photos/960/540?random=disabled-1" loading="lazy">
+                </z-zoomer>
+
+                <figcaption>
+                    <p><button id="disabled-demo-btn">Disable</button></p>
+
+                    <pre><code class="language-ts">document.querySelector('#disabled-demo-btn')?.addEventListener('click', () => {
+    document.querySelector('#disabled-demo')?.toggleAttribute('disabled');
+})</code></pre>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 id="real-life-demo">
+                Real life demo
+            </h2>
+
+            <p>For example, in a carousel (<a href="https://z-carousel.caradeuc.info">z-carousel</a>) you can zoom a picture and prevent the carousel from moving at the same time.</p>
+
+            <figure>
+                <z-carousel id="real-life-demo-carousel" navigation dots pagination drag>
+                    <z-zoomer class="real-life-demo-zoomer">
+                        <img src="https://picsum.photos/960/540?random=real-life-1" loading="lazy">
+                    </z-zoomer>
+
+                    <z-zoomer class="real-life-demo-zoomer">
+                        <img src="https://picsum.photos/960/540?random=real-life-2" loading="lazy">
+                    </z-zoomer>
+
+                    <z-zoomer class="real-life-demo-zoomer">
+                        <img src="https://picsum.photos/960/540?random=real-life-3" loading="lazy">
+                    </z-zoomer>
+
+                    <svg slot="nav-prev" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    <svg slot="nav-next" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                        viewBox="0 0 24 24">
+                        <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </z-carousel>
+
+                <figcaption>
+                    <p>HTML</p>
+
+                    <pre><code class="language-ts">&lt;z-carousel id="real-life-demo-carousel" navigation dots pagination drag&gt;
+    &lt;z-zoomer&gt;
+        &lt;img src="https://picsum.photos/960/540?random=real-life-1"&gt;
+    &lt;/z-zoomer&gt;
+
+    &lt;z-zoomer&gt;
+        &lt;img src="https://picsum.photos/960/540?random=real-life-2"&gt;
+    &lt;/z-zoomer&gt;
+
+    &lt;z-zoomer&gt;
+        &lt;img src="https://picsum.photos/960/540?random=real-life-3"&gt;
+    &lt;/z-zoomer&gt;
+
+
+    &lt;svg slot="nav-prev" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+        viewBox="0 0 24 24"&gt;
+        &lt;path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" /&gt;
+    &lt;/svg&gt;
+
+    &lt;svg slot="nav-next" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+        viewBox="0 0 24 24"&gt;
+        &lt;path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" /&gt;
+    &lt;/svg&gt;
+&lt;/z-carousel&gt;</code></pre>
+
+                    <p>TS</p>
+
+                    <pre><code class="language-ts">const realLifeCarousel = document.querySelector('#real-life-demo-carousel');
+const realLifeCarouselZoomers = realLifeCarousel?.querySelectorAll('.real-life-demo-zoomer');
+
+if (realLifeCarousel && realLifeCarouselZoomers?.length) {
+    realLifeCarouselZoomers.forEach(zoomer => {
+        zoomer.addEventListener('zoomchange', (e) => {
+            const { isZoomed } = (e as CustomEvent).detail;
+            realLifeCarousel.toggleAttribute('disabled', isZoomed)
+        })
+    })
+}</code></pre>
+                    <p>CSS</p>
+
+                    <pre><code class="language-css">z-zoomer.real-life-demo-zoomer::part(zoomer):hover {
+    cursor: zoom-in;
+}
+
+z-zoomer.real-life-demo-zoomer::part(zoomer zoomer--is-zoomed):hover {
+    cursor: grab;
+}
+
+z-zoomer.real-life-demo-zoomer::part(zoomer zoomer--is-zoomed zoomer--is-mooving):active {
+    cursor: grabbing;
+}</code></pre>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; <a href="https://benjamin.caradeuc.info">Benjamin Caradeuc</a> 2024
+        </div>
+    </footer>
+</body>
+
+</html>

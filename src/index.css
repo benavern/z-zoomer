@@ -1,0 +1,364 @@
+:root {
+    --clr-txt: #ededed;
+    --clr-bg: #213547;
+    --clr-bg-alt: #172935;
+    --clr-accent: #6480c5;
+
+    --spacing: 0.625rem;
+    --border-width: .125rem;
+    --border-radius-lg: .5rem;
+    --border-radius: .25rem;
+
+    --header-height: 6rem;
+    --menu-burger-width: 2rem;
+
+    --carousel-arrow-bg: rgb(26 26 26 / .25);
+    --carousel-arrow-bg-hover: rgb(26 26 26 / .5);
+    --carousel-arrow-shadow: 0 0 1rem rgb(255 255 255 / .25);
+
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: var(--clr-txt);
+    background-color: var(--clr-bg);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --clr-txt: #213547;
+        --clr-bg: #ededed;
+        --clr-bg-alt: #e9ecf7;
+        --clr-accent: #3b4d7c;
+
+        --carousel-arrow-bg: rgb(255 255 255 / .3);
+        --carousel-arrow-bg-hover: rgb(255 255 255 / .5);
+        --carousel-arrow-shadow: 0 0 1rem rgb(0 0 0 / .25);
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+header {
+    z-index: 10;
+    position: sticky;
+    height: var(--header-height);
+    top: 0;
+}
+
+header,
+footer {
+    background-color: var(--clr-bg);
+    box-shadow: 0 0 1rem rgb(0 0 0 / .25);
+    padding-block: calc(2 * var(--spacing));
+}
+
+header .logo {
+    color: var(--clr-accent);
+}
+
+header .ext-links {
+    display: flex;
+    gap: var(--spacing);
+}
+
+header .ext-logo {
+    color: inherit;
+    transition: .3s color;
+}
+
+header .ext-logo:hover {
+    color: var(--clr-accent);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header + nav {
+    z-index: 11;
+    position: fixed;
+    top: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: var(--spacing) calc(2 * var(--spacing));
+    background-color: var(--clr-bg-alt);
+    transform: translateX(-100%);
+    transition: .3s transform;
+}
+
+header + nav:hover {
+    transform: translateX(0);
+}
+
+header + nav .nav-burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    padding: 5px;
+    background-color: var(--clr-accent);
+}
+
+header + nav .nav-burger svg {
+    width: var(--menu-burger-width);
+    height: var(--menu-burger-width);
+}
+
+footer {
+    text-align: center;
+}
+
+section {
+    margin: 0;
+    padding: calc(4 * var(--spacing)) 0;
+}
+
+section:nth-child(even) {
+    background-color: var(--clr-bg-alt);
+}
+
+section h2 {
+    scroll-margin: calc(var(--header-height) + var(--menu-burger-width) + var(--spacing));
+}
+
+hr {
+    width: max(10rem, calc(100% - (40 * var(--spacing))));
+    margin: calc(6 * var(--spacing)) auto;
+    border: none;
+    border-top: var(--border-width) solid var(--clr-accent);
+}
+
+a {
+    color: var(--clr-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin: var(--spacing) 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+figure {
+    border: var(--border-width) solid var(--clr-accent);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin: calc(2 * var(--spacing)) 0;
+}
+
+figure figcaption {
+    border-top: var(--border-width) solid var(--clr-accent);
+}
+
+figure figcaption pre[class*="language-"] {
+    margin: 0;
+    border-radius: 0;
+}
+
+figure figcaption p {
+    padding-inline: var(--spacing);
+}
+
+code {
+    display: inline-block;
+    padding: .25rem .5rem;
+    background: var(--clr-accent);
+    color: var(--clr-bg);
+    border-radius: var(--border-radius);
+}
+
+.container {
+    width: max(0px, calc(100% - (2 * var(--spacing))));
+    max-width: 60rem;
+    margin-inline: auto;
+}
+
+pre[class*="language-"] {
+    border: none !important;
+}
+
+button {
+    display: inline-flex;
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid var(--clr-accent);
+    border-radius: .25em;
+    background-color: transparent;
+    padding: .5em 1em;
+    box-shadow: 0 0 1em rgb(0 0 0 / .25);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--clr-accent);
+    box-shadow: 0 0 1em rgb(0 0 0 / .5);
+}
+
+/* === Examples === */
+z-zoomer.real-life-demo-zoomer::part(zoomer):hover {
+    cursor: zoom-in;
+}
+
+z-zoomer.real-life-demo-zoomer::part(zoomer zoomer--is-zoomed):hover {
+    cursor: grab;
+}
+
+z-zoomer.real-life-demo-zoomer::part(zoomer zoomer--is-zoomed zoomer--is-mooving):active {
+    cursor: grabbing;
+}
+
+z-carousel:not(:defined) {
+    display: none;
+}
+
+z-carousel {
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+z-carousel::part(content) {
+    align-items: center;
+    scroll-behavior: smooth;
+}
+
+z-carousel::part(nav-btn) {
+    position: absolute;
+    top: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--carousel-arrow-bg);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--carousel-arrow-shadow);
+    transition-property: background-color, backdrop-filter;
+    transition-duration: .3s;
+}
+
+z-carousel::part(nav-btn):hover {
+    background-color: var(--carousel-arrow-bg-hover);
+    backdrop-filter: blur(5px);
+}
+
+z-carousel::part(nav-btn):focus-visible {
+    outline: .125rem auto var(--clr-accent);
+}
+
+z-carousel::part(nav-btn nav-btn--disabled) {
+    opacity: .5;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+z-carousel::part(nav-btn nav-btn--prev) {
+    left: 10px;
+    transform: translate(10px, -50%);
+}
+
+z-carousel::part(nav-btn nav-btn--next) {
+    right: 10px;
+    transform: translate(-10px, -50%);
+}
+
+z-carousel::part(pagination) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5px 10px;
+    border-top-right-radius: 5px;
+    backdrop-filter: blur(5px);
+    background: var(--carousel-arrow-bg);
+    pointer-events: none;
+}
+
+z-carousel::part(dots) {
+    z-index: 1;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    background: var(--carousel-arrow-bg);
+    box-shadow: var(--carousel-arrow-shadow);
+    backdrop-filter: blur(5px);
+    border-radius: 9999px;
+}
+
+z-carousel::part(dots-item) {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .75rem .5rem;
+    transition: color .3s;
+    font-size: 0;
+    line-height: 0;
+}
+
+z-carousel::part(dots-item)::before {
+    content: '';
+    width: .25rem;
+    height: .25rem;
+    background-color: currentColor;
+    border-radius: 50%;
+}
+
+z-carousel::part(dots-item dots-item--active)::before {
+    width: .75rem;
+    height: .75rem;
+    box-shadow: var(--carousel-arrow-shadow);
+}
+
+z-carousel::part(dots-item dots-item--active),
+z-carousel::part(dots-item dots-item--active):hover {
+    color: var(--clr-accent);
+}
+
+z-carousel > img {
+    object-fit: cover;
+    height: 100%;
+}
