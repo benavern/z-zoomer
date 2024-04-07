@@ -287,8 +287,8 @@ export class ZZoomer extends LitElement {
     }
 
     private _onMouseLeave() {
-        if (this._touch.validated) {
-            this._touch.validated = false;
+        if (this._mouse.validated) {
+            this._mouse.validated = false;
             this.isMovingMouse = false;
         }
     }
